@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Effects and Animations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        /* 1. CSS Shadow Effects */
+        .image-box {
+            width: 300px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s;
+        }
+
+        .image-box:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            opacity: 0.9; /* 5. Adding Opacity to an Image */
+        }
+
+        /* 2. CSS Animations */
+        @keyframes exampleAnimation {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+
+        .animate {
+            animation-name: exampleAnimation;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-delay: 0.5s;
+        }
+
+        /* 3. Pagination */
+        .pagination {
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        .pagination a {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            text-decoration: none;
+            margin: 0 4px; /* Without spaces */
+            transition: background-color 0.3s;
+        }
+
+        .pagination a:hover {
+            background-color: #f1f1f1; /* Hover effect */
+        }
+
+        /* 4. Handling Overflow */
+        .overflow-container {
+            width: 300px;
+            height: 100px;
+            overflow-y: scroll; /* Scroll for overflow */
+            border: 1px solid #ddd;
+            margin: 20px 0;
+            padding: 10px;
+        }
+
+        /* 6. Different Positions */
+        .static-box {
+            position: static; /* Default */
+            background: lightblue;
+            padding: 10px;
+        }
+
+        .relative-box {
+            position: relative; /* Relative positioning */
+            background: lightgreen;
+            padding: 10px;
+            top: 10px;
+        }
+
+        .absolute-box {
+            position: absolute; /* Absolute positioning */
+            background: lightcoral;
+            padding: 10px;
+            top: 50px; /* Position relative to nearest positioned ancestor */
+            left: 10px;
+        }
+
+        .fixed-box {
+            position: fixed; /* Fixed positioning */
+            background: lightgoldenrodyellow;
+            padding: 10px;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .sticky-box {
+            position: sticky; /* Sticky positioning */
+            background: lightpink;
+            padding: 10px;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Effects and Animations Example</h1>
+
+    <!-- 1. Image Box with Shadow Effects -->
+    <div class="image-box animate">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image">
+    </div>
+
+    <!-- 2. Pagination Example -->
+    <div class="pagination">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+    </div>
+
+    <!-- 4. Handling Overflow using Scroll -->
+    <h2>Handling Overflow</h2>
+    <div class="overflow-container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <!-- 5. Adding Opacity to an Image -->
+    <h2>Image with Opacity</h2>
+    <img src="https://via.placeholder.com/300" alt="Placeholder Image with Opacity" style="opacity: 0.7;">
+
+    <!-- 6. Different Positions -->
+    <h2>CSS Positioning Examples</h2>
+    <div class="static-box">This box is statically positioned.</div>
+    <div class="relative-box">This box is relatively positioned.</div>
+    <div class="absolute-box">This box is absolutely positioned.</div>
+    <div class="fixed-box">This box is fixed positioned (bottom-right).</div>
+    <div class="sticky-box">This box is sticky (will stick to the top when you scroll).</div>
+
+</body>
+</html>

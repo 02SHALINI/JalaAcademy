@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Layout Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        /* 1. Table with fixed layout */
+        .fixed-table {
+            width: 100%;
+            table-layout: fixed; /* Fixed layout */
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .fixed-table th, .fixed-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        /* 1. Table with auto layout */
+        .auto-table {
+            width: 100%;
+            table-layout: auto; /* Auto layout */
+            border-collapse: collapse;
+        }
+
+        .auto-table th, .auto-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        /* 2. List with changed list-style-type */
+        .custom-list {
+            list-style-type: square; /* Change list style */
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        /* 3. Grid layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .grid-item {
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        /* 4. Hero image */
+        .hero-image {
+            background-image: url('https://via.placeholder.com/1200x400'); /* Replace with actual image URL */
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin-bottom: 20px;
+        }
+
+        /* 5. Responsive design using media queries */
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+
+            .hero-image {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Layout Examples</h1>
+
+    <!-- 1. Table with fixed layout -->
+    <h2>Fixed Table Layout</h2>
+    <table class="fixed-table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Item 1</td>
+                <td>Sample Description 1</td>
+                <td>$10</td>
+            </tr>
+            <tr>
+                <td>Item 2</td>
+                <td>Sample Description 2</td>
+                <td>$15</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Auto Table Layout -->
+    <h2>Auto Table Layout</h2>
+    <table class="auto-table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Item 1</td>
+                <td>Sample Description 1</td>
+                <td>$10</td>
+            </tr>
+            <tr>
+                <td>Item 2</td>
+                <td>Sample Description 2</td>
+                <td>$15</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 2. List with changed list-style-type -->
+    <h2>Custom List</h2>
+    <ul class="custom-list">
+        <li>First Item</li>
+        <li>Second Item</li>
+        <li>Third Item</li>
+    </ul>
+
+    <!-- 3. Grid Layout -->
+    <h2>Grid Layout Example</h2>
+    <div class="grid-container">
+        <div class="grid-item">Grid Item 1</div>
+        <div class="grid-item">Grid Item 2</div>
+        <div class="grid-item">Grid Item 3</div>
+        <div class="grid-item">Grid Item 4</div>
+        <div class="grid-item">Grid Item 5</div>
+    </div>
+
+    <!-- 4. Hero Image -->
+    <h2>Hero Image Example</h2>
+    <div class="hero-image">
+        Welcome to Our Website!
+    </div>
+
+</body>
+</html>

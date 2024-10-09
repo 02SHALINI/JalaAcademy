@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Features</title>
+    <style>
+        /* 1. Table with black border and hover effect */
+        table {
+            width: 100%;
+            border: 2px solid black;
+        }
+
+        table:hover {
+            border-color: blue; /* Changes color on hover */
+        }
+
+        /* 2. Visibility and display examples */
+        .hidden {
+            visibility: hidden;
+        }
+
+        .visible {
+            visibility: visible;
+        }
+
+        .collapse {
+            visibility: collapse;
+        }
+
+        .display-none {
+            display: none;
+        }
+
+        .display-inline {
+            display: inline;
+        }
+
+        .display-block {
+            display: block;
+        }
+
+        .display-contents {
+            display: contents;
+        }
+
+        .display-list-item {
+            display: list-item;
+        }
+
+        /* 3. Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #content {
+            height: 1500px; /* Long content to scroll */
+        }
+
+        #top, #bottom {
+            margin: 20px 0;
+        }
+
+        /* 4. Padding and margin */
+        .padding-example {
+            padding: 20px;
+            background-color: lightgreen;
+        }
+
+        .margin-example {
+            margin: 20px;
+            background-color: lightcoral;
+        }
+
+        /* 5. Multiple background images with adjustable sizes */
+        .multiple-background {
+            width: 100%;
+            height: 300px;
+            background-image: url('https://via.placeholder.com/300x150'), url('https://via.placeholder.com/150');
+            background-size: 100px, 50px;
+            background-repeat: no-repeat;
+            background-position: left top, right bottom;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Table with black border and hover color change -->
+    <h1>Table Border and Hover Example</h1>
+    <table>
+        <tr><th>Header 1</th><th>Header 2</th></tr>
+        <tr><td>Data 1</td><td>Data 2</td></tr>
+        <tr><td>Data 3</td><td>Data 4</td></tr>
+    </table>
+
+    <!-- 2. Visibility and Display examples -->
+    <h1>Visibility and Display Examples</h1>
+    <div class="hidden">This text is hidden using visibility: hidden.</div>
+    <div class="visible">This text is visible using visibility: visible.</div>
+    <div class="collapse">This text uses visibility: collapse.</div>
+    <div class="display-none">This text is hidden using display: none.</div>
+    <div class="display-inline">This text uses display: inline.</div>
+    <div class="display-block">This text uses display: block.</div>
+    <div class="display-contents">This text uses display: contents.</div>
+    <ul>
+        <li class="display-list-item">This list item uses display: list-item.</li>
+    </ul>
+
+    <!-- 3. Smooth scrolling links -->
+    <h1>Smooth Scroll Links</h1>
+    <a href="#bottom">Click to go to bottom of the page</a>
+    <div id="content"></div>
+    <div id="bottom">
+        <a href="#top">Click to go to top of the page</a>
+    </div>
+
+    <!-- 4. Padding and Margin examples -->
+    <h1>Padding and Margin Examples</h1>
+    <div class="padding-example">This element has padding (inside spacing).</div>
+    <div class="margin-example">This element has margin (outside spacing).</div>
+
+    <!-- 5. Multiple background images -->
+    <h1>Multiple Background Images Example</h1>
+    <div class="multiple-background">
+        This element has two background images with different sizes.
+    </div>
+
+    <div id="top"></div>
+</body>
+</html>

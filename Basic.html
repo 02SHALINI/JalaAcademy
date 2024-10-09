@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Page</title>
+    <link rel="stylesheet" href="style.css" >
+</head>
+<body>
+    <style>
+        /* Pseudo-classes and elements */
+     a:hover {
+          color: red;
+     }
+     p::first-letter {
+          font-size: 200%;
+          color: blue;
+     }
+     ul li:hover {
+        background-color: lightgray;
+     }
+    .highlight::before {
+        content: "Important: ";
+        font-weight: bold;
+     }
+ 
+    </style>
+    <!--  Using various HTML tags -->
+    <header>
+        <h1>Main Heading of the Page</h1>
+    </header>
+
+    <section id="section1">
+        <h2>Introduction</h2>
+        <p>This is a paragraph. <i>This text is in italics</i> and <b>this text is bold.</b></p>
+
+        <p class="highlight">This is another paragraph with some important text.</p>
+    </section>
+
+    <section id="section2">
+        <h2>HTML Lists</h2>
+        <ul>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+        </ul>
+    </section>
+
+    <section id="section3">
+        <h2>HTML Form Elements</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+    </section>
+
+    <section>
+        <h2>Blockquote and Horizontal Rule</h2>
+        <blockquote>
+            "This is a blockquote element, used for quoting large sections of text."
+        </blockquote>
+        <hr>
+        <p>Below the horizontal rule.</p>
+    </section>
+
+    <section>
+        <h2>Image and Div/Span Elements</h2>
+        <div>
+            <span>This is a span element inside a div.</span>
+        </div>
+        <div>
+            <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        </div>
+    </section>
+
+    <!--Navigation within the page -->
+    <nav>
+        <h2>Navigate within the page:</h2>
+        <ul>
+            <li><a href="#section1">Go to Introduction</a></li>
+            <li><a href="#section2">Go to Lists Section</a></li>
+            <li><a href="#section3">Go to Form Section</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>

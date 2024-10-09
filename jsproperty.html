@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Examples</title>
+    <style>
+        #counter {
+            margin: 20px;
+            font-size: 24px;
+        }
+    </style>
+    <script>
+        // 1. Using 'this' keyword to hide a button when clicked
+        function hideButton() {
+            this.style.display = 'none'; // Hides the button
+        }
+
+        // 2. Invoke a function using call() and apply()
+        function greet(greeting, punctuation) {
+            return `${greeting}, ${this.name}${punctuation}`;
+        }
+
+        const person = { name: "Alice" };
+
+        function callApplyExamples() {
+            // Using call()
+            const callResult = greet.call(person, "Hello", "!");
+            console.log("Call Result:", callResult); // Hello, Alice!
+
+            // Using apply()
+            const applyResult = greet.apply(person, ["Hi", "."]);
+            console.log("Apply Result:", applyResult); // Hi, Alice.
+        }
+
+        // 3. Counter implementation
+        let count = 0; // Initial count
+        function incrementCounter() {
+            count++;
+            document.getElementById("counter").innerText = count;
+        }
+
+        // 4. Counter using getter and setter
+        const Counter = (() => {
+            let _count = 0; // Private variable
+
+            return {
+                get count() {
+                    return _count; // Getter
+                },
+                set count(value) {
+                    _count = value; // Setter
+                },
+                increment() {
+                    this.count++; // Increment using setter
+                    document.getElementById("getterCounter").innerText = this.count;
+                }
+            };
+        })();
+
+        // 5. Adding properties to an existing function using prototypes
+        function Person(name) {
+            this.name = name;
+        }
+
+        Person.prototype.greet = function() {
+            return `Hello, my name is ${this.name}`;
+        };
+
+        Person.prototype.age = 30; // Adding a property to the prototype
+
+        function addPropertiesExample() {
+            const john = new Person("John");
+            console.log(john.greet()); // Hello, my name is John
+            console.log("Age:", john.age); // Age: 30
+        }
+
+        window.onload = function() {
+            // Initialize counter display
+            document.getElementById("counter").innerText = count;
+            // Initialize getter counter display
+            document.getElementById("getterCounter").innerText = Counter.count;
+            // Call apply and call examples on page load
+            callApplyExamples();
+            addPropertiesExample();
+        };
+    </script>
+</head>
+<body>
+
+    <h1>JavaScript Functionality Examples</h1>
+
+    <!-- 1. Button that disappears when clicked -->
+    <button onclick="hideButton.call(this)">Click to Hide Me</button>
+
+    <!-- 3. Counter with increment button -->
+    <h2>Counter Example</h2>
+    <div id="counter">0</div>
+    <button onclick="incrementCounter()">Count</button>
+
+    <!-- 4. Counter using getter and setter -->
+    <h2>Getter and Setter Counter</h2>
+    <div id="getterCounter">0</div>
+    <button onclick="Counter.increment()">Count using Getter/Setter</button>
+
+</body>
+</html>

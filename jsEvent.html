@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        // 1. Add an event listener to display current date and time
+        function displayDateTime() {
+            const now = new Date();
+            document.getElementById('dateTime').innerText = now.toString();
+        }
+
+        // 2. JavaScript validation to ensure the text box is not empty
+        function validateForm() {
+            const textBox = document.getElementById('textInput');
+            if (textBox.value.trim() === '') {
+                alert('Text box cannot be empty!');
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+
+        // 3. Using console.log() for debugging
+        function debugExample() {
+            const testValue = "Debugging example";
+            console.log("Debugging: ", testValue); // This will print to the console
+        }
+
+        // 4. Functions to set, get, and check a cookie
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null; // Cookie not found
+        }
+
+        function checkCookie() {
+            const user = getCookie("username");
+            if (user) {
+                alert("Welcome back, " + user);
+            } else {
+                const username = prompt("Please enter your name:");
+                if (username) {
+                    setCookie("username", username, 7); // Set cookie for 7 days
+                }
+            }
+        }
+
+        // 5. Create a JSON object and access it using dot notation
+        function jsonExample() {
+            const person = {
+                name: "John",
+                age: 30,
+                city: "New York"
+            };
+            console.log("Name: ", person.name); // Access using dot notation
+            console.log("Age: ", person.age);   // Access using dot notation
+        }
+
+        // Initialize functions on page load
+        window.onload = function() {
+            debugExample(); // Run debug example
+            checkCookie();  // Check if cookie exists
+        };
+    </script>
+</head>
+<body>
+
+    <h1>JavaScript Functionality Examples</h1>
+
+    <!-- 1. Button to display current date and time -->
+    <button onclick="displayDateTime()">Click to Show Current Date and Time</button>
+    <div id="dateTime" class="result"></div>
+
+    <!-- 2. Form with validation -->
+    <form onsubmit="return validateForm()">
+        <label for="textInput">Enter some text:</label>
+        <input type="text" id="textInput" required>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
